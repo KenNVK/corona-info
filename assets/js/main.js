@@ -21,24 +21,23 @@ fetch(`${URL_API}all`)
 
 function showResultsGlobal(result) {
   let htmls = '';
-  htmls +=
-    `
-  <div class="global-card">
-  <span>Global</span>
-  <h3>Coronavirus cases</h3>
-  <span>${formatNumber(result.cases)}</span>
-  </div>
-  <div class="global-card">
-  <span>Global</span>
-  <h3>Deaths</h3>
-  <span>${formatNumber(result.recovered)}</span>
-  </div>
-  <div class="global-card">
-  <span>Global</span>
-  <h3>Recovered</h3>
-  <span>${formatNumber(result.deaths)}</span>
-  </div>
-  `
+  htmls +=`
+          <div class="global-card">
+          <span>Global</span>
+          <h3>Coronavirus cases</h3>
+          <span>${formatNumber(result.cases)}</span>
+          </div>
+          <div class="global-card">
+          <span>Global</span>
+          <h3>Deaths</h3>
+          <span>${formatNumber(result.recovered)}</span>
+          </div>
+          <div class="global-card">
+          <span>Global</span>
+          <h3>Recovered</h3>
+          <span>${formatNumber(result.deaths)}</span>
+          </div>
+          `;
   globalCard.innerHTML += htmls;
 }
 
@@ -57,17 +56,17 @@ function showResultsContries(results) {
     countriesArray.push(result.country)
     
     htmls += `
-    <tr>
-    <td></td>
-    <td>${result.country}</td>
-    <td>${formatNumber(result.cases)}</td>
-    <td>${formatNumber(result.todayCases)}</td>
-    <td>${formatNumber(result.deaths)}</td>
-    <td>${formatNumber(result.todayDeaths)}</td>
-    <td>${formatNumber(result.recovered)}</td>
-    <td>${formatNumber(result.active)}</td>
-    </tr>
-    `;
+            <tr>
+            <td></td>
+            <td>${result.country}</td>
+            <td>${formatNumber(result.cases)}</td>
+            <td>${formatNumber(result.todayCases)}</td>
+            <td>${formatNumber(result.deaths)}</td>
+            <td>${formatNumber(result.todayDeaths)}</td>
+            <td>${formatNumber(result.recovered)}</td>
+            <td>${formatNumber(result.active)}</td>
+            </tr>
+            `;
   })
 
   countriesArray.sort().forEach(country => {
@@ -97,31 +96,31 @@ function showResultsSelector(results) {
   if (Array.isArray(results)) {
     results.forEach(result => {
       htmls += `
-      <tr>
-      <td></td>
-      <td>${result.country}</td>
-      <td>${formatNumber(result.cases)}</td>
-      <td>${formatNumber(result.todayCases)}</td>
-      <td>${formatNumber(result.deaths)}</td>
-      <td>${formatNumber(result.todayDeaths)}</td>
-      <td>${formatNumber(result.recovered)}</td>
-      <td>${formatNumber(result.active)}</td>
-      </tr>
-      `;
+              <tr>
+              <td></td>
+              <td>${result.country}</td>
+              <td>${formatNumber(result.cases)}</td>
+              <td>${formatNumber(result.todayCases)}</td>
+              <td>${formatNumber(result.deaths)}</td>
+              <td>${formatNumber(result.todayDeaths)}</td>
+              <td>${formatNumber(result.recovered)}</td>
+              <td>${formatNumber(result.active)}</td>
+              </tr>
+              `;
     })
   } else {
     htmls += `
-    <tr>
-    <td></td>
-    <td>${results.country}</td>
-    <td>${formatNumber(results.cases)}</td>
-    <td>${formatNumber(results.todayCases)}</td>
-    <td>${formatNumber(results.deaths)}</td>
-    <td>${formatNumber(results.todayDeaths)}</td>
-    <td>${formatNumber(results.recovered)}</td>
-    <td>${formatNumber(results.active)}</td>
-    </tr>
-    `;
+            <tr>
+            <td></td>
+            <td>${results.country}</td>
+            <td>${formatNumber(results.cases)}</td>
+            <td>${formatNumber(results.todayCases)}</td>
+            <td>${formatNumber(results.deaths)}</td>
+            <td>${formatNumber(results.todayDeaths)}</td>
+            <td>${formatNumber(results.recovered)}</td>
+            <td>${formatNumber(results.active)}</td>
+            </tr>
+            `;
   }
   tbody.innerHTML = '';
   tbody.innerHTML += htmls;
