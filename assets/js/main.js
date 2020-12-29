@@ -60,7 +60,7 @@ async function getCountriesData() {
 async function showResultsContries() {
 	const countriesData = await getCountriesData();
 	let htmls = '';
-	let html = '';
+	let html = '<li class="country">All Country</li>';
 	const countriesArray = [];
 
 	countriesData.forEach(countryData => {
@@ -82,7 +82,6 @@ async function showResultsContries() {
 
 	countriesArray.sort().forEach(country => {
 		html += `
-			<li class="country">All Country</li>
 			<li class="country">${country}</li>`;
 	});
 
