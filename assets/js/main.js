@@ -1,7 +1,7 @@
 import handleSelector from './selector.js';
 import clickSort from './sortTable.js';
 
-const URL_API = 'https://coronavirus-19-api.herokuapp.com/';
+const URL_API = 'https://disease.sh/v3/covid-19/';
 const tbody = document.querySelector('tbody');
 const countriesSelector = document.querySelector('.countries-selector');
 
